@@ -21,7 +21,7 @@ interface IProject {
   title: string;
   description: string;
   image: string;
-  github?: string
+  github?: string;
   live?: string;
   tags: string[];
 }
@@ -33,6 +33,7 @@ const projects: IProject[] = [
       'A fully functional e-commerce platform built from scratch, offering seamless navigation, secure transactions, and a reliable backend.',
     image: '/4meg.png',
     live: 'https://4meg.net',
+    github: 'https://github.com/your-username/4meg', // Added GitHub link
     tags: ['Next.js', 'React', 'Node.js', 'NestJS', 'PostgreSQL', 'TypeScript'],
   },
   {
@@ -41,8 +42,10 @@ const projects: IProject[] = [
       'An ongoing platform designed to connect businesses and streamline their operations, facilitating better business interactions and operational workflows.',
     image: '/placeholder.svg',
     live: 'https://example.com',
+    github: 'https://github.com/your-username/b2b-project', // Added GitHub link
     tags: ['Next.js', 'TypeScript', 'NestJS', 'PostgreSQL'],
   },
+  // Add more projects as needed
 ];
 
 export function Projects() {
@@ -53,12 +56,12 @@ export function Projects() {
   );
 
   return (
-    <section id="projects" className="pt-16 py-20">
+    <section id="projects" className="pt-16 py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl text-center mb-12">
           Featured Projects
         </h2>
-        <div className="flex justify-center space-x-2 mb-8">
+        <div className="flex justify-center flex-wrap gap-2 mb-8">
           {tags.map((tag) => (
             <Button
               key={tag}
@@ -78,28 +81,29 @@ export function Projects() {
           ))}
         </div>
         <AnimatePresence>
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8" layout>
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            layout
+          >
             {filteredProjects.map((project) => (
               <motion.div
                 key={project.title}
                 layout
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3 }}
               >
-                <Card
-                  key={project.title}
-                  className="overflow-hidden dark:bg-gray-800 dark:border dark:border-gray-700 h-full flex flex-col"
-                >
+                <Card className="overflow-hidden dark:bg-gray-800 dark:border dark:border-gray-700 h-full flex flex-col">
                   <Image
                     src={project.image}
                     alt={project.title}
-                    width={300}
-                    height={200}
+                    width={600}
+                    height={400}
                     className="w-full h-48 object-cover"
                   />
                   <CardHeader>
-                    <CardTitle>{project.title}</CardTitle>
+                    <CardTitle className="text-xl font-semibold">{project.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <p className="text-gray-600 dark:text-gray-300">{project.description}</p>
@@ -114,8 +118,8 @@ export function Projects() {
                       ))}
                     </div>
                   </CardContent>
-                  <CardFooter className="flex justify-between">
-                    {project?.github ?? (
+                  <CardFooter className="flex justify-end space-x-2">
+                    {project.github && (
                       <Button
                         variant="outline"
                         size="sm"
@@ -125,11 +129,11 @@ export function Projects() {
                         <Github className="mr-2 h-4 w-4" /> GitHub
                       </Button>
                     )}
-                    {project.live ?? (
+                    {project.live && (
                       <Button
                         size="sm"
                         onClick={() => window.open(project.live, '_blank')}
-                        className="flex items-center dark:bg-indigo-600 dark:text-white dark:hover:bg-indigo-700"
+                        className="flex items-center bg-indigo-600 text-white dark:bg-indigo-500 dark:hover:bg-indigo-600"
                       >
                         <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
                       </Button>
