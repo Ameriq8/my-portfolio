@@ -18,10 +18,7 @@ export function Hero() {
   };
 
   return (
-    <div
-      id="home"
-      className="relative bg-gradient-to-r from-indigo-500 to-purple-600 overflow-hidden z-0 min-h-screen w-full"
-    >
+    <div id='home' className="relative bg-gradient-to-r from-indigo-500 to-purple-600 overflow-hidden z-0 min-h-screen w-full">
       <div className="relative z-20 pb-8 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32 flex justify-center items-center min-h-screen">
         <main className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 text-center">
           <motion.div
@@ -36,7 +33,7 @@ export function Hero() {
                 Full-Stack Developer
               </span>
             </h1>
-            <p className="mt-3 text-base text-indigo-100 sm:mt-5 sm:text-lg max-w-xl md:mt-5 md:text-xl">
+            <p className="mt-3 text-base text-indigo-100 sm:mt-5 sm:text-lg max-w-xl md:mt-5 md:text-xl mx-auto">
               Crafting innovative web solutions that drive business growth and user engagement.
               Specializing in full-stack development with expertise in modern web technologies.
             </p>
