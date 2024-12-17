@@ -6,21 +6,21 @@ const testimonials = [
   {
     name: 'Alex Johnson',
     role: 'CEO, TechCorp',
-    image: '/placeholder.svg?height=100&width=100',
+    image: '/placeholder.svg',
     content:
       'Working with this developer was an absolute pleasure. They delivered a high-quality product on time and within budget.',
   },
   {
     name: 'Sarah Lee',
     role: 'Marketing Director, StartupX',
-    image: '/placeholder.svg?height=100&width=100',
+    image: '/placeholder.svg',
     content:
       'The attention to detail and the ability to translate our vision into reality was impressive. Highly recommended!',
   },
   {
     name: 'Mike Brown',
     role: 'CTO, InnovateCo',
-    image: '/placeholder.svg?height=100&width=100',
+    image: '/placeholder.svg',
     content:
       'The technical expertise and problem-solving skills demonstrated were top-notch. A true professional in every sense.',
   },

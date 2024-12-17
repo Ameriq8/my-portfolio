@@ -22,16 +22,16 @@ const projects = [
     title: '4meg E-commerce Website',
     description:
       'A fully functional e-commerce platform built from scratch, offering seamless navigation, secure transactions, and a reliable backend.',
-    image: '/placeholder.svg?height=200&width=300',
+    image: '/4meg.png',
     github: 'https://github.com',
-    live: 'https://example.com',
+    live: 'https://4meg.net',
     tags: ['Next.js', 'React', 'Node.js', 'NestJS', 'PostgreSQL', 'TypeScript'],
   },
   {
     title: 'B2B Project',
     description:
       'An ongoing platform designed to connect businesses and streamline their operations, facilitating better business interactions and operational workflows.',
-    image: '/placeholder.svg?height=200&width=300',
+    image: '/placeholder.svg',
     github: 'https://github.com',
     live: 'https://example.com',
     tags: ['Next.js', 'TypeScript', 'NestJS', 'PostgreSQL'],
