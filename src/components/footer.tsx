@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin } from 'lucide-react';
+import { Github, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const footerItems = [
   { name: 'Home', id: 'home' },
@@ -55,17 +55,13 @@ export function Footer() {
               Connect
             </h3>
             <div className="mt-4 flex space-x-6">
-              <a href="" className="text-gray-400 hover:text-gray-500 dark:hover:text-white">
+              <a href="https://github.com/Ameriq8/" className="text-gray-400 hover:text-gray-500 dark:hover:text-white">
                 <span className="sr-only">GitHub</span>
                 <Github className="h-6 w-6" />
               </a>
-              <a href="" className="text-gray-400 hover:text-gray-500 dark:hover:text-white">
+              <a href="https://www.instagram.com/56_bc" className="text-gray-400 hover:text-gray-500 dark:hover:text-white">
                 <span className="sr-only">Instagram</span>
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="" className="text-gray-400 hover:text-gray-500 dark:hover:text-white">
-                <span className="sr-only">Telegram</span>
-                <Linkedin className="h-6 w-6" />
+                <Instagram className="h-6 w-6" />
               </a>
             </div>
           </div>
