@@ -34,7 +34,7 @@ const projects = [
     image: '/placeholder.svg?height=200&width=300',
     github: 'https://github.com',
     live: 'https://example.com',
-    tags: ['Next.js', 'TypeScript', 'NestJS', 'PostgreSQL', 'TypeScript'],
+    tags: ['Next.js', 'TypeScript', 'NestJS', 'PostgreSQL'],
   },
 ];
 
