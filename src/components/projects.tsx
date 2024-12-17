@@ -17,13 +17,21 @@ const tags = [
   'NestJS',
 ];
 
-const projects = [
+interface IProject {
+  title: string;
+  description: string;
+  image: string;
+  github?: string
+  live?: string;
+  tags: string[];
+}
+
+const projects: IProject[] = [
   {
     title: '4meg E-commerce Website',
     description:
       'A fully functional e-commerce platform built from scratch, offering seamless navigation, secure transactions, and a reliable backend.',
     image: '/4meg.png',
-    github: 'https://github.com',
     live: 'https://4meg.net',
     tags: ['Next.js', 'React', 'Node.js', 'NestJS', 'PostgreSQL', 'TypeScript'],
   },
@@ -32,7 +40,6 @@ const projects = [
     description:
       'An ongoing platform designed to connect businesses and streamline their operations, facilitating better business interactions and operational workflows.',
     image: '/placeholder.svg',
-    github: 'https://github.com',
     live: 'https://example.com',
     tags: ['Next.js', 'TypeScript', 'NestJS', 'PostgreSQL'],
   },
@@ -108,19 +115,25 @@ export function Projects() {
                     </div>
                   </CardContent>
                   <CardFooter className="flex justify-between">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="flex items-center dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
-                    >
-                      <Github className="mr-2 h-4 w-4" /> GitHub
-                    </Button>
-                    <Button
-                      size="sm"
-                      className="flex items-center dark:bg-indigo-600 dark:text-white dark:hover:bg-indigo-700"
-                    >
-                      <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
-                    </Button>
+                    {project?.github ?? (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => window.open(project.github, '_blank')}
+                        className="flex items-center dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700"
+                      >
+                        <Github className="mr-2 h-4 w-4" /> GitHub
+                      </Button>
+                    )}
+                    {project.live ?? (
+                      <Button
+                        size="sm"
+                        onClick={() => window.open(project.live, '_blank')}
+                        className="flex items-center dark:bg-indigo-600 dark:text-white dark:hover:bg-indigo-700"
+                      >
+                        <ExternalLink className="mr-2 h-4 w-4" /> Live Demo
+                      </Button>
+                    )}
                   </CardFooter>
                 </Card>
               </motion.div>
