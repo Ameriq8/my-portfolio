@@ -1,7 +1,27 @@
-import Link from 'next/link';
 import { Github, Twitter, Linkedin } from 'lucide-react';
 
+const footerItems = [
+  { name: 'Home', id: 'home' },
+  { name: 'Skills', id: 'skills' },
+  { name: 'Projects', id: 'projects' },
+  { name: 'Contact', id: 'contact' },
+];
+
 export function Footer() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navbarHeight = 64; // Adjust this value based on your navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <footer className="bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -18,14 +38,14 @@ export function Footer() {
               Quick Links
             </h3>
             <ul className="mt-4 space-y-4">
-              {['Home', 'Projects', 'Skills', 'Blog', 'Contact'].map((item) => (
-                <li key={item}>
-                  <Link
-                    href={`/${item.toLowerCase()}`}
+              {footerItems.map((item) => (
+                <li key={item.id}>
+                  <a
+                    onClick={() => scrollToSection(item.id.toLowerCase())}
                     className="text-base text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
                   >
-                    {item}
-                  </Link>
+                    {item.name}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -35,16 +55,16 @@ export function Footer() {
               Connect
             </h3>
             <div className="mt-4 flex space-x-6">
-              <a href="#" className="text-gray-400 hover:text-gray-500 dark:hover:text-white">
+              <a href="" className="text-gray-400 hover:text-gray-500 dark:hover:text-white">
                 <span className="sr-only">GitHub</span>
                 <Github className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500 dark:hover:text-white">
-                <span className="sr-only">Twitter</span>
+              <a href="" className="text-gray-400 hover:text-gray-500 dark:hover:text-white">
+                <span className="sr-only">Instagram</span>
                 <Twitter className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-gray-500 dark:hover:text-white">
-                <span className="sr-only">LinkedIn</span>
+              <a href="" className="text-gray-400 hover:text-gray-500 dark:hover:text-white">
+                <span className="sr-only">Telegram</span>
                 <Linkedin className="h-6 w-6" />
               </a>
             </div>

@@ -25,7 +25,7 @@ const projects = [
     image: '/placeholder.svg?height=200&width=300',
     github: 'https://github.com',
     live: 'https://example.com',
-    tags: ['Next.js', 'React', 'Node.js', 'Express', 'MongoDB'],
+    tags: ['Next.js', 'React', 'Node.js', 'NestJS', 'PostgreSQL', 'TypeScript'],
   },
   {
     title: 'B2B Project',
@@ -34,7 +34,7 @@ const projects = [
     image: '/placeholder.svg?height=200&width=300',
     github: 'https://github.com',
     live: 'https://example.com',
-    tags: ['Next.js', 'TypeScript', 'NestJS', 'PostgreSQL'],
+    tags: ['Next.js', 'TypeScript', 'NestJS', 'PostgreSQL', 'TypeScript'],
   },
 ];
 
